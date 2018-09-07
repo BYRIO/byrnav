@@ -1,4 +1,19 @@
 module.exports = {
+  babel: {
+    "plugins": [
+      ["component", [{
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-default"
+        },
+      ]]
+    ],
+    comments: true
+  },
+  plugins: ['~plugins/element-ui'],
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    { src: '~assets/global.styl', lang: 'stylus' }
+  ],
   /*
   ** Headers of the page
   */
@@ -21,6 +36,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['element-ui'],
     /*
     ** Run ESLint on save
     */
